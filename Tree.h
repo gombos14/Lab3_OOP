@@ -4,9 +4,10 @@
 class Tree
 {
 private:
-	Node* root = NULL;
+	Node* root;
 	int nrNodes = 0;
 public:
+	Tree();
 	void insert(int x);
 	Node* ins(int v, Node* t);
 	void inorder(Node* n);

@@ -2,6 +2,10 @@
 #include "Tree.h"
 #include "Node.h"
 
+Tree::Tree() {
+	this->root = NULL;
+}
+
 Node* Tree::ins(int v, Node* t)
 {
 	if (t == NULL)
@@ -9,13 +13,16 @@ Node* Tree::ins(int v, Node* t)
 	else
 	{
 		if (v < t->key)
+		{
 			if (t->left == NULL)
 				t->left = new Node(v);
 			else ins(v, t->left);
-		else if (v >= t->key)
+		}
+		else if (v >= t->key) {
 			if (t->right == NULL)
 				t->right = new Node(v);
 			else ins(v, t->right);
+		}
 	}
 	return t;
 }
@@ -41,7 +48,7 @@ void Tree::display()
 	int k;
 	std::cout<<"1. Inorder\n2. Preorder\n3. Postorder\n" << std::flush;
 	std::cin >> k;
-	system("CLS");
+	//system("clear");
 	std::cout << std::flush;
 	if (k == 1)
 	{
